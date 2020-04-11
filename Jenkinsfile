@@ -24,6 +24,15 @@ node {
         buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean install'
     }
 
+	    stage('Sonarqube Quality Gate'){
+	    script{
+		def scannerHome = tool 'sonarqube';
+		    withSonarQubeEnv("sonarqube"){
+			    sh "${tool("sonarscanner")}/bin/sonar-scanner"    
+		    }
+	    }
+	}
+
     stage('Publish build info') {
         server.publishBuildInfo buildInfo
     }
