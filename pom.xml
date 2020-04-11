@@ -56,6 +56,11 @@
 			<version>1.9.5</version>
 		</dependency>
 	</dependencies>
+	<server>
+      <username>admin</username>
+      <password>2FjaUzqa_glFnd8NEGWotA</password>
+      <id>artifactory</id>
+	</server>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 					
